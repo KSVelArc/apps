@@ -64,6 +64,6 @@ if __name__ == '__main__':
         for i,j in zip(in_cypher,in_key):
             num = d[i][0]-d[j][0]
             message = message+(get_key(num))
-    else: st.write('ERROR: The message must contain only letters.')
+    else: st.write('ERROR: The words must contain only letters.')
 
     st.write('Message: {}'.format(message))
