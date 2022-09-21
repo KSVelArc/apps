@@ -31,6 +31,8 @@ d = {'A':[0,-26],'B':[1,-25],'C':[2,-24],'D':[3,-23],'E':[4,-22],'F':[5,-21],
 
 if __name__ == '__main__':
     st.title('Fire in Adlerstein Cypher')
+    st.write('This cypher is composed of two encrypted words: a cypher and a key. The words are composed of letters only and exclude white-spaces. Example: CXEIIX and AZPBEG. Each letter in the alphabet is assigned to two numbers (a positive number ranging from 1 to 25, and a negative number ranging from -1 to -26). To find the hidden message, look up the number assigned to each letter in both words. For example: [2,23,4,8,8,23] and [0,25,15,1,4,6]. Each letter in the cypher must be subtracted by each letter in the key. Example: [2,-2,-11,7,4,17]. The resulting list of numbers can then be used to solve the message by looking up each number in the table. Example: 2=C, -2=Y, -11=P, 7=H, 4=E, 17=R.')
+    st.write(d.items())
     
     st.write('__________________________________')
     #phrase = 'STREAMLIT'
@@ -53,8 +55,8 @@ if __name__ == '__main__':
 
 
     st.write('__________________________________')
-    in_cypher = st.text_input('Enter a cypher (letters only, no spaces). Example: BPASDX').upper()
-    in_key = st.text_input('Enter a key  (letters only, no spaces). Example: JIWKSX').upper()
+    in_cypher = st.text_input('Enter a cypher (letters only, no spaces). Example: CXEIIX').upper()
+    in_key = st.text_input('Enter a key  (letters only, no spaces). Example: AZPBEG').upper()
 
 
     message = ''
