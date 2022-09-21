@@ -60,8 +60,10 @@ if __name__ == '__main__':
 
 
     message = ''
-    for i,j in zip(in_cypher,in_key):
-        num = d[i][0]-d[j][0]
-        message = message+(get_key(num))
+    if all(elem in d.keys() for elem in list(in_cypher)) == True and all(elem in d.keys() for elem in list(in_key)) == True:
+        for i,j in zip(in_cypher,in_key):
+            num = d[i][0]-d[j][0]
+            message = message+(get_key(num))
+    else: st.write('ERROR: The message must contain only letters.')
 
     st.write('Message: {}'.format(message))
